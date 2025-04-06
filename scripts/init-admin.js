@@ -11,15 +11,15 @@ mongoose.connect(db_string, { useNewUrlParser: true, useUnifiedTopology: true, d
 async function createAdminUser() {
   try {
     // Check if admin already exists
-    const existingAdmin = await Admin.findOne({ username: 'admin' });
+    const existingAdmin = await Admin.findOne({ username: 'itzfarzaan' });
     
     if (existingAdmin) {
       console.log('Admin user already exists');
     } else {
       // Create a new admin user
       const admin = new Admin({
-        username: 'admin',
-        password: 'admin123' // You should change this to a secure password
+        username: 'itzfarzaan',
+        password: process.env.ADMIN_PASSWORD
       });
       
       await admin.save();
