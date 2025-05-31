@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .endpoint {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio API</h1>
+    <p>This is the API for the portfolio website. Here are the available endpoints:</p>
+
+    <div class="endpoint">
+        <h3>Test API Connection</h3>
+        <code>GET /api/test</code>
+        <p>A simple test endpoint to verify the API is working.</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Get All Blogs</h3>
+        <code>GET /api/blogs</code>
+        <p>Retrieve all blog posts.</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Get Blog by ID</h3>
+        <code>GET /api/blogs/:id</code>
+        <p>Retrieve a specific blog post by its ID.</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Get All Projects</h3>
+        <code>GET /api/projects</code>
+        <p>Retrieve all projects.</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Get Featured Projects</h3>
+        <code>GET /api/projects/featured</code>
+        <p>Retrieve all featured projects.</p>
+    </div>
+
+    <div class="endpoint">
+        <h3>Get Project by ID</h3>
+        <code>GET /api/projects/:projectId</code>
+        <p>Retrieve a specific project by its ID.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Portfolio API</p>
+    </footer>
+</body>
+</html> 
