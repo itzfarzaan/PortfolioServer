@@ -7,8 +7,29 @@ const adminRouter = require("../routes/admin");
 // Initialize the Express app
 const app = express();
 
+// CORS Configuration
+const allowedOrigins = ['https://farzaanali.com', 'http://localhost:3001', 'http://localhost:3000','portfolio-rlo0.onrender.com','www.farzaanali.com'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
+  credentials: true
+};
+
+// Enable pre-flight requests for all routes
+app.options('*', cors(corsOptions));
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Simple test route to verify the API is working
