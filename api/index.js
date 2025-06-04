@@ -39,6 +39,7 @@ app.get('/api/test', (req, res) => {
 
 // Main routes
 app.use("/api/admin", adminRouter);
+app.use("/admin", adminRouter);
 
 // Public API routes for blog posts
 app.get('/api/blogs', async (req, res) => {
